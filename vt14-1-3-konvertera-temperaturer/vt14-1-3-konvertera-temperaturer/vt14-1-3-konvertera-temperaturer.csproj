@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\error.html" />
     <Content Include="Content\main.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

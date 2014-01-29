@@ -12,8 +12,9 @@ namespace vt14_1_3_konvertera_temperaturer {
         }
 
         protected void Button1_Click(object sender, EventArgs e) {
-            if (!CtoF.Checked && !FtoC.Checked) {
-                ModelState.AddModelError(String.Empty, "Välj konvertering från Celsius till Fahrenheit eller från Fahrenheit till Celsius");
+            if (!CtoF.Checked && !FtoC.Checked || CtoF.Checked && FtoC.Checked) {
+                ModelState.AddModelError(String.Empty,
+                    "Välj konvertering från Celsius till Fahrenheit eller från Fahrenheit till Celsius");
             }
 
             if (IsValid) {
@@ -22,8 +23,12 @@ namespace vt14_1_3_konvertera_temperaturer {
                 var step = int.Parse(Step.Text);
 
                 var thead = new TableHeaderRow();
-                var theadC = new TableHeaderCell { Text = "&deg;C" };
-                var theadF = new TableHeaderCell { Text = "&deg;F" };
+                var theadC = new TableHeaderCell {
+                    Text = "&deg;C"
+                };
+                var theadF = new TableHeaderCell {
+                    Text = "&deg;F"
+                };
 
                 if (CtoF.Checked) {
                     thead.Cells.Add(theadC);
@@ -32,12 +37,14 @@ namespace vt14_1_3_konvertera_temperaturer {
                     thead.Cells.Add(theadF);
                     thead.Cells.Add(theadC);
                 }
-                 
+
                 Table.Rows.Add(thead);
 
                 for (int temp = start; temp <= end; temp += step) {
                     var trow = new TableRow();
-                    trow.Cells.Add(new TableCell { Text = temp.ToString() });
+                    trow.Cells.Add(new TableCell {
+                        Text = temp.ToString()
+                    });
 
                     if (CtoF.Checked) {
                         trow.Cells.Add(new TableCell {
@@ -51,6 +58,10 @@ namespace vt14_1_3_konvertera_temperaturer {
 
                     Table.Rows.Add(trow);
                 }
+
+                Table.Visible = true;
+            } else {
+                Table.Visible = false;
             }
         }
     }
