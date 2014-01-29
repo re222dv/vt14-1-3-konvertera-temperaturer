@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <h1>Konvertera temperatur</h1>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="error" />
-        <div>
+        <div id="main">
             <div>
                 <asp:Label ID="Label1" runat="server" Text="Starttemperatur:" AssociatedControlID="Start"></asp:Label>
                 <asp:TextBox ID="Start" runat="server"></asp:TextBox>
@@ -51,15 +51,9 @@
                     <asp:Label ID="Label6" runat="server" Text="Fahrenheit till Celsius"></asp:Label>
                 </div>
             </div>
-            <asp:Button ID="Button1" runat="server" Text="Konvertera" />
+            <asp:Button ID="Button1" runat="server" Text="Konvertera" OnClick="Button1_Click" />
         </div>
-        <table>
-                <tr>
-                    <th>&deg;C</th>
-                    <th>&deg;F</th>
-                </tr>
-            <asp:Table ID="Table1" runat="server"></asp:Table>
-        </table>
+        <asp:Table ID="Table" runat="server"></asp:Table>
     </form>
 </body>
 </html>
