@@ -1,0 +1,54 @@
+﻿body {
+    padding: 20px;
+}
+
+h1 {
+    font-family: Arial;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#main {
+    float: left;
+    width: 200px;
+}
+
+input[type="number"] {
+    width: 170px;
+}
+
+#Step {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    margin: 10px;
+
+    width: 150px;
+}
+
+table {
+    float: left;
+    margin-left: 50px;
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    width: 100px;
+
+    color: white;
+    background-color: gray;
+}
+
+tr:nth-child(2n + 1) {
+    background-color: lightgray;
+}
+
+td {
+    text-align: center;
+}

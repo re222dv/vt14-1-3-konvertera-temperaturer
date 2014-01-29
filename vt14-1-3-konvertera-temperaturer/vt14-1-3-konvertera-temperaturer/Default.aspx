@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Konvertera temperatur</title>
+    <link href="Content/main.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +14,7 @@
         <div id="main">
             <div>
                 <asp:Label ID="Label1" runat="server" Text="Starttemperatur:" AssociatedControlID="Start"></asp:Label>
-                <asp:TextBox ID="Start" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Start" runat="server" TextMode="Number" autofocus="autofocus"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Fyll i en starttemperatur"
                     Display="Dynamic" Text="*" CssClass="error" ControlToValidate="Start" />
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Ange starttemperatur i hela grader"
@@ -21,7 +22,7 @@
             </div>
             <div>
                 <asp:Label ID="Label2" runat="server" Text="Sluttemperatur:" AssociatedControlID="End"></asp:Label>
-                <asp:TextBox ID="End" runat="server"></asp:TextBox>
+                <asp:TextBox ID="End" runat="server" TextMode="Number"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Fyll i en sluttemperatur"
                     Display="Dynamic" Text="*" CssClass="error" ControlToValidate="End" />
                 <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Ange sluttemperatur i hela grader"
@@ -32,7 +33,7 @@
             </div>
             <div>
                 <asp:Label ID="Label3" runat="server" Text="Temperatursteg:" AssociatedControlID="Step"></asp:Label>
-                <asp:TextBox ID="Step" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Step" runat="server" TextMode="Number"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Fyll i temperatursteg"
                     Display="Dynamic" Text="*" CssClass="error" ControlToValidate="Step" />
                 <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Ange temperatursteg i hela grader"
@@ -43,7 +44,7 @@
             <div>
                 <asp:Label ID="Label4" runat="server" Text="Typ av konvertering"></asp:Label>
                 <div>
-                    <asp:RadioButton ID="CtoF" GroupName="radio" runat="server" />
+                    <asp:RadioButton ID="CtoF" GroupName="radio" runat="server" Checked="True" />
                     <asp:Label ID="Label5" runat="server" Text="Celsius till Fahrenheit"></asp:Label>
                 </div>
                 <div>
